@@ -25,7 +25,6 @@ script at the top of the directory.
 
 
 
-
 ---
 
 # Why test?
@@ -53,7 +52,6 @@ program.
 
 
 
-
 ---
 
 # Testing with pytest
@@ -68,7 +66,6 @@ program.
 The `pytest` test runner can be used to execute tests that aren't written with
 any `pytest` module functionality, such as tests that use the `unittest` module
 from the standard library.
-
 
 
 
@@ -109,7 +106,6 @@ def test_something():
 
 
 
-
 ---
 
 # Practical example 1: Starting from scratch
@@ -137,7 +133,6 @@ commits later.
 
 
 
-
 ---
 
 # Practical example 1: Starting from scratch (cont.)
@@ -153,7 +148,6 @@ def test_math_works():
 
 Our first example is directly executing the code that it's testing. Normally
 though, we want to test the code that's actually defined in our module.
-
 
 
 
@@ -193,7 +187,6 @@ def test_multiply():
 
 
 
-
 ---
 
 # Practical example 2: Testing code in our module (cont.)
@@ -213,7 +206,6 @@ def add(x, y):
 def multiply(x, y):
     return x * y
 ```
-
 
 
 
@@ -249,7 +241,6 @@ be answered with tests.
 
 
 
-
 ---
 
 # Test fixtures
@@ -267,7 +258,6 @@ Fixtures are extremely flexible:
 * Fixtures can be scoped as necessary
 * Tests can use more than one fixture at a time
 * Fixtures can be reused, facilitating test isolation
-
 
 
 
@@ -305,12 +295,10 @@ def test_multiply_data(data):
 
 
 
-
 ---
 
 # Parameterization
 
-Just like normal code, test code can be refactored to deduplicate test logic.
 Instead of running dozens of copies of effectively the same test, we can
 define a test to operate on parameters passed at runtime.
 
@@ -338,8 +326,7 @@ In general:
 
 # Practical example 4: Parameterizing the tests
 
-We can refactor the earlier tests we wrote to instead use a parameterized
-fixture:
+We can refactor the earlier tests we wrote to use a parameterized fixture:
 
 ```python tests/test_using_pytest.py
 import pytest
@@ -389,7 +376,6 @@ def test_foo2():
 
 
 
-
 ---
 
 # Practical example 5: Exceptional mathematics
@@ -411,7 +397,6 @@ def test_multiply_non_numbers():
     with pytest.raises(TypeError):
         using_pytest.multiply("non", "numbers")
 ```
-
 
 
 
@@ -445,7 +430,6 @@ interface for its exceptions.
 
 
 
-
 ---
 
 # Conclusion
@@ -457,22 +441,3 @@ positive impact on not only code correctness, but also module design.
 Comments? Let me know.
 
 Questions?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
