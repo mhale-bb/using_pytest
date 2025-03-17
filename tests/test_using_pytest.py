@@ -15,3 +15,11 @@ def test_add(x, y, expectation):
 ])
 def test_multiply(x, y, expectation):
     assert using_pytest.multiply(x, y) == expectation
+
+def test_add_non_numbers():
+    with pytest.raises(TypeError):
+        using_pytest.add("non", "numbers")
+
+def test_multiply_non_numbers():
+    with pytest.raises(TypeError):
+        using_pytest.multiply("non", "numbers")
