@@ -20,6 +20,10 @@ def test_add_non_numbers():
     with pytest.raises(TypeError):
         using_pytest.add("non", "numbers")
 
+def test_add_stringy_numbers():
+    with pytest.raises(TypeError):
+        using_pytest.add("1", 2)
+
 def test_multiply_non_numbers():
     with pytest.raises(TypeError):
         using_pytest.multiply("non", "numbers")
