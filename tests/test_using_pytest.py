@@ -1,11 +1,17 @@
+import pytest
 import using_pytest
 
-def test_add():
-    x = 1
-    y = 2
-    assert using_pytest.add(x, y) == 3
+@pytest.fixture(params=[
+    (1, 2),
+    (4, 6),
+])
+def data(request):
+    return request.param
 
-def test_multiply():
-    x = 4
-    y = 6
-    assert using_pytest.multiply(x, y) == 24
+def test_add(data):
+    x, y = data
+    assert using_pytest.add(x, y) == x + y
+
+def test_multiply(data):
+    x, y = data
+    assert using_pytest.multiply(x, y) == x * y
